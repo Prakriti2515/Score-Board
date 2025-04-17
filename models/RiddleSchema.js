@@ -6,10 +6,6 @@ const RiddleSchema =new mongoose.Schema({
         required: true,
         unique: true
       },
-      question: {
-        type: String,
-        required: true
-      },
       correctAnswer: {
         type: String,
         required: true
