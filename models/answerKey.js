@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const RiddleSchema =new mongoose.Schema({
+const answerKey =new mongoose.Schema({
     riddleId: {
         type: Number,
         required: true,
@@ -12,5 +12,5 @@ const RiddleSchema =new mongoose.Schema({
       }
     })
 
-    export default RiddleSchema
+    export default answerKey
     
