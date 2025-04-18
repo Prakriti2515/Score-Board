@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import answerKey from "./answerKey";
 
 const team = new mongoose.Schema({
     teamId:{
@@ -20,4 +19,4 @@ const team = new mongoose.Schema({
     }
 
 })
-export default answerKey
+export default team;
