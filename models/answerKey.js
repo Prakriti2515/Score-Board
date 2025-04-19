@@ -1,16 +1,16 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
-const answerKey =new mongoose.Schema({
-    riddleId: {
-        type: Number,
-        required: true,
-        unique: true
-      },
-      correctAnswer: {
-        type: String,
-        required: true
-      }
-    })
+const answerKeySchema = new mongoose.Schema({
+  questionId: {
+    type: Number,
+    required: true,     
+    unique: true,       
+  },
+  correctAnswer: {
+    type: String,
+    required: true,     
+  }
+});
 
-    export default answerKey
-    
+const AnswerKey = mongoose.model('AnswerKey', answerKeySchema);
+export default AnswerKey;

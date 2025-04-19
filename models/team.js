@@ -1,22 +1,33 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const team = new mongoose.Schema({
-    teamId:{
-        type:Number,
-        required: true,
-        unique: true
+const teamSchema = new mongoose.Schema({
+  teamName: {
+    type: String,
+    required: true,      
+    unique: true,       
+    trim: true,          
+  },
+  answers: [
+    {
+      questionId: {
+        type: Number,
+        required: true,  
+      },
+      givenAnswer: {
+        type: String,
+        required: true,  
+      },
+      isCorrect: {
+        type: Boolean,
+        required: true,  
+      },
     },
-    answer:[
-        {
-            riddleId: Number,
-            answerInput: String,
-            answerCorrect: Boolean
-        }
-    ],
-    score:{
-        default: 0,
-        type: Number
-    }
+  ],
+  totalReward: {
+    type: Number,
+    default: 0,         
+  },
+});
 
-})
-export default team;
+const Team = mongoose.model('Team', teamSchema);
+export default Team;
